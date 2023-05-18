@@ -14,6 +14,7 @@ class Solution:
             lst.append(head.val)
             head = head.next
             
-        llst = "".join(map(str,lst))
-        
-        return True if llst == llst[::-1] else False
+        while len(lst) > 1:
+            if lst.pop(0) != lst.pop():
+                return False
+        return True
