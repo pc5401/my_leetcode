@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        lst: List = []
+        lst: Deque = collections.deque()
         
         if not head:
             return True
@@ -15,6 +15,6 @@ class Solution:
             head = head.next
             
         while len(lst) > 1:
-            if lst.pop(0) != lst.pop():
+            if lst.popleft() != lst.pop():
                 return False
         return True
